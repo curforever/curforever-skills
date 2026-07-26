@@ -1,0 +1,4 @@
+interface:
+  display_name: "Read Coach"
+  short_description: "快速评估文章质量，并用自适应问答引导用户真正掌握核心内容。"
+  default_prompt: "使用 $read-coach 评估并带我学习这篇文章：<文件路径>。"
