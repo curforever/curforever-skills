@@ -34,6 +34,8 @@ gh skill install curforever/curforever-skills skills/learning/read-coach \
 
 以下命令都安装到用户范围（`--scope user`），即对该 agent 的所有项目生效。安装完成后请重启对应 agent。
 
+下方示例使用 `read-coach`；要安装其他 skill，请将命令中的路径替换为 [Skills](#skills) 表中对应的“安装路径”。
+
 ### Codex
 
 ```bash
@@ -78,6 +80,16 @@ gh skill install curforever/curforever-skills skills/learning/read-coach \
 ```
 
 `gh skill` 目前处于预览阶段；如命令不可用，请升级 GitHub CLI，或使用你的 agent 提供的技能安装方式。
+
+### 安装其他 Skill（以 Codex 为例）
+
+```bash
+gh skill install curforever/curforever-skills skills/communication/ask-coach \
+  --agent codex --scope user
+
+gh skill install curforever/curforever-skills skills/productivity/daily-report \
+  --agent codex --scope user
+```
 
 ## 使用示例
 
@@ -125,9 +137,11 @@ distributed-systems.read-coach.md
 
 ## Skills
 
-| Skill | 说明 | 状态 |
+| Skill | 说明 | 安装路径 |
 | --- | --- | --- |
-| [read-coach](skills/learning/read-coach/) | 评估学习材料，并以自适应问答帮助掌握核心内容 | 首个公开版本 |
+| [read-coach](skills/learning/read-coach/) | 评估学习材料，并以自适应问答帮助掌握核心内容 | `skills/learning/read-coach` |
+| [ask-coach](skills/communication/ask-coach/) | 将职场沟通意图改写为 2–3 个可直接发送的版本 | `skills/communication/ask-coach` |
+| [daily-report](skills/productivity/daily-report/) | 规划、记录并汇总每日工作；支持 `plan`、`log`、`final` 三种模式 | `skills/productivity/daily-report` |
 
 每个 skill 都保持自包含：`SKILL.md` 定义工作流，脚本处理确定性任务，参考文件保存可按需加载的细则。
 
