@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Reading Coach"
+  short_description: "用业务链路、IDEA 跟读和自测，循序理解关键代码"
+  default_prompt: "Use $code-reading-coach to guide me through the next code path with IntelliJ IDEA steps."
+
+policy:
+  allow_implicit_invocation: false

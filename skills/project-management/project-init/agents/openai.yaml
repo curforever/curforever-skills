@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Init"
+  short_description: "Initialize or migrate project continuity documents"
+  default_prompt: "Use $project-init to initialize this local project."

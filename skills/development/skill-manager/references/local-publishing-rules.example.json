@@ -1,0 +1,12 @@
+{
+  "replacements": [
+    {
+      "pattern": "Example User Name",
+      "replacement": "用户"
+    }
+  ],
+  "forbiddenPatterns": [
+    "Example User Name",
+    "example-user"
+  ]
+}

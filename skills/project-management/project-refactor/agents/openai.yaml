@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Refactor"
+  short_description: "Synchronize project documents after structural changes"
+  default_prompt: "Use $project-refactor to sync project docs after I moved or renamed files."

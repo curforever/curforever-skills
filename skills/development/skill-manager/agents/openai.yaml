@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Manager"
+  short_description: "Sanitize, organize, preview, and publish local skills"
+  default_prompt: "Use $skill-manager to inventory my local skills and prepare a sanitized preview for publication."

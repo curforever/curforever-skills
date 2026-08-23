@@ -139,12 +139,21 @@ distributed-systems.read-coach.md
 
 | Skill | 说明 | 安装路径 |
 | --- | --- | --- |
-| [read-coach](skills/learning/read-coach/) | 评估学习材料，并以自适应问答帮助掌握核心内容 | `skills/learning/read-coach` |
-| [ask-coach](skills/communication/ask-coach/) | 将职场沟通意图改写为 2–3 个可直接发送的版本 | `skills/communication/ask-coach` |
-| [daily-report](skills/productivity/daily-report/) | 规划、记录并汇总每日工作；支持 `plan`、`log`、`final` 三种模式 | `skills/productivity/daily-report` |
-
-每个 skill 都保持自包含：`SKILL.md` 定义工作流，脚本处理确定性任务，参考文件保存可按需加载的细则。
-
+| [ask-coach](skills/communication/ask-coach/) | 将职场沟通意图改写为可直接发送的版本 | `skills/communication/ask-coach` |
+| [brainstorming](skills/development/brainstorming/) | 在创作或实现前梳理需求与设计 | `skills/development/brainstorming` |
+| [code-planner](skills/development/code-planner/) | 生成范围清晰、可执行的编码任务提示 | `skills/development/code-planner` |
+| [code-reading-coach](skills/development/code-reading-coach/) | 以业务问题驱动的交互式源码学习 | `skills/development/code-reading-coach` |
+| [code-reviewer](skills/development/code-reviewer/) | 只读审查代码变更及其测试证据 | `skills/development/code-reviewer` |
+| [prompt-architect](skills/development/prompt-architect/) | 按任务意图分析并改进提示词 | `skills/development/prompt-architect` |
+| [skill-manager](skills/development/skill-manager/) | 脱敏、规范化并发布本地技能集合 | `skills/development/skill-manager` |
+| [read-coach](skills/learning/read-coach/) | 评估学习材料并通过问答帮助掌握内容 | `skills/learning/read-coach` |
+| [daily-report](skills/productivity/daily-report/) | 规划、记录并汇总每日工作 | `skills/productivity/daily-report` |
+| [knowledge-base](skills/productivity/knowledge-base/) | 查询、整理和复用本地工作知识 | `skills/productivity/knowledge-base` |
+| [project-close](skills/project-management/project-close/) | 创建项目交接或轻量检查点 | `skills/project-management/project-close` |
+| [project-init](skills/project-management/project-init/) | 初始化或同步项目连续性文档 | `skills/project-management/project-init` |
+| [project-refactor](skills/project-management/project-refactor/) | 结构调整后同步项目文档引用 | `skills/project-management/project-refactor` |
+| [project-resume](skills/project-management/project-resume/) | 为接手项目生成只读上下文简报 | `skills/project-management/project-resume` |
+| [humanizer](skills/writing/humanizer/) | 减少 AI 写作惯性并保留自然表达 | `skills/writing/humanizer` |
 ## 开发与贡献
 
 欢迎通过 [Issues](https://github.com/curforever/curforever-skills/issues) 提出问题、改进建议或新的 skill 想法。提交改动前，请运行该 skill 随附的测试，并避免加入真实材料、凭据或平台专属的隐藏依赖。

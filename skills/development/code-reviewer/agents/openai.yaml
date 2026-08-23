@@ -1,0 +1,4 @@
+interface:
+  display_name: "代码审查"
+  short_description: "只读验证变更并报告高置信问题"
+  default_prompt: "使用 $code-reviewer 对本次变更做只读代码审查与证据核验。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Close"
+  short_description: "Checkpoint and preserve project state for handoff"
+  default_prompt: "Use $project-close to save and hand off the current project state."

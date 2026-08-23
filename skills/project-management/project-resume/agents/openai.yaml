@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Resume"
+  short_description: "Read-only project handoff and continuity briefing"
+  default_prompt: "Use $project-resume to brief me before I continue this project."

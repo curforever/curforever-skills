@@ -1,0 +1,4 @@
+interface:
+  display_name: "编码规划"
+  short_description: "为 JoyCode 生成具体、受约束的编码提示词"
+  default_prompt: "使用 $code-planner 为这个开发任务生成可直接交给 JoyCode 的具体提示词。"

@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {"source": "ask-coach", "category": "communication", "target": "ask-coach", "summary": "将职场沟通意图改写为可直接发送的版本", "initialPublish": false},
+    {"source": "brainstorming", "category": "development", "target": "brainstorming", "summary": "在创作或实现前梳理需求与设计"},
+    {"source": "code-planner", "category": "development", "target": "code-planner", "summary": "生成范围清晰、可执行的编码任务提示"},
+    {"source": "code-reading-coach", "category": "development", "target": "code-reading-coach", "summary": "以业务问题驱动的交互式源码学习"},
+    {"source": "code-reviewer", "category": "development", "target": "code-reviewer", "summary": "只读审查代码变更及其测试证据"},
+    {"source": "daily-report", "category": "productivity", "target": "daily-report", "summary": "规划、记录并汇总每日工作", "initialPublish": false},
+    {"source": "humanizer", "category": "writing", "target": "humanizer", "summary": "减少 AI 写作惯性并保留自然表达"},
+    {"source": "knowledge-base", "category": "productivity", "target": "knowledge-base", "summary": "查询、整理和复用本地工作知识"},
+    {"source": "project-close", "category": "project-management", "target": "project-close", "summary": "创建项目交接或轻量检查点"},
+    {"source": "project-init", "category": "project-management", "target": "project-init", "summary": "初始化或同步项目连续性文档"},
+    {"source": "project-refactor", "category": "project-management", "target": "project-refactor", "summary": "结构调整后同步项目文档引用"},
+    {"source": "project-resume", "category": "project-management", "target": "project-resume", "summary": "为接手项目生成只读上下文简报"},
+    {"source": "prompt-architect", "category": "development", "target": "prompt-architect", "summary": "按任务意图分析并改进提示词"},
+    {"source": "read-coach", "category": "learning", "target": "read-coach", "summary": "评估学习材料并通过问答帮助掌握内容", "initialPublish": false},
+    {"source": "skill-manager", "category": "development", "target": "skill-manager", "summary": "脱敏、规范化并发布本地技能集合"}
+  ]
+}
