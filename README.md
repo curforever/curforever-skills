@@ -6,6 +6,8 @@
 
 ## Skills
 
+<!-- skill-catalog:start -->
+
 ### 开发与工程
 
 | Skill | 说明 | 安装路径 |
@@ -45,6 +47,8 @@
 | --- | --- | --- |
 | [ask-coach](skills/communication/ask-coach/) | 将职场沟通意图改写为可直接发送的版本 | `skills/communication/ask-coach` |
 | [humanizer](skills/writing/humanizer/) | 减少 AI 写作惯性并保留自然表达 | `skills/writing/humanizer` |
+
+<!-- skill-catalog:end -->
 
 ## 安装
 
