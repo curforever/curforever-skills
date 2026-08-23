@@ -46,7 +46,11 @@ function Copy-SkillFiles([string]$Source, [string]$Destination) {
     foreach ($directory in @('agents', 'references', 'scripts', 'tests')) {
         $from = Join-Path $Source $directory
         if (Test-Path -LiteralPath $from -PathType Container) {
-            Copy-Item -LiteralPath $from -Destination (Join-Path $Destination $directory) -Recurse -Force
+            $to = Join-Path $Destination $directory
+            New-Item -ItemType Directory -Path $to -Force | Out-Null
+            Get-ChildItem -LiteralPath $from -Force | ForEach-Object {
+                Copy-Item -LiteralPath $_.FullName -Destination $to -Recurse -Force
+            }
         }
     }
 }
@@ -102,10 +106,11 @@ function Update-ReadmeCatalog([string]$ReadmePath, $Mappings) {
         "| [$($mapping.target)](skills/$($mapping.category)/$($mapping.target)/) | $($mapping.summary) | ``skills/$($mapping.category)/$($mapping.target)`` |"
     }
     $catalog = "## Skills`n`n| Skill | 说明 | 安装路径 |`n| --- | --- | --- |`n" + ($rows -join "`n") + "`n"
-    $updated = [regex]::Replace($readme, '(?s)## Skills\r?\n.*?(?=\r?\n## 开发与贡献)', $catalog.TrimEnd())
-    if ($updated -eq $readme) {
+    $pattern = '(?s)## Skills\r?\n.*?(?=\r?\n## 开发与贡献)'
+    if (-not [regex]::IsMatch($readme, $pattern)) {
         Stop-Release 'README.md does not contain the expected Skills catalog section.'
     }
+    $updated = [regex]::Replace($readme, $pattern, $catalog.TrimEnd())
     [System.IO.File]::WriteAllText($ReadmePath, $updated.TrimEnd() + "`n", [System.Text.UTF8Encoding]::new($false))
 }
 
