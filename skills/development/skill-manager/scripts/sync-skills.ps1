@@ -100,15 +100,32 @@ function Test-ReleaseText([string]$Text, [string]$RelativePath, $Rules) {
     }
 }
 
-function Update-ReadmeCatalog([string]$ReadmePath, $Mappings) {
+function Update-ReadmeCatalog([string]$ReadmePath, $Mappings, $Groups) {
     $readme = Get-Content -LiteralPath $ReadmePath -Raw
-    $rows = foreach ($mapping in $Mappings | Sort-Object category, target) {
-        "| [$($mapping.target)](skills/$($mapping.category)/$($mapping.target)/) | $($mapping.summary) | ``skills/$($mapping.category)/$($mapping.target)`` |"
+    if (@($Groups).Count -eq 0) {
+        Stop-Release 'The skill map does not define ordered README groups.'
     }
-    $catalog = "## Skills`n`n| Skill | 说明 | 安装路径 |`n| --- | --- | --- |`n" + ($rows -join "`n") + "`n"
-    $pattern = '(?s)## Skills\r?\n.*?(?=\r?\n## 开发与贡献)'
+    $groupCategories = @($Groups | ForEach-Object { $_.categories } | ForEach-Object { $_ })
+    $unknownCategories = @($Mappings | Where-Object { $_.category -notin $groupCategories } | ForEach-Object { $_.category } | Select-Object -Unique)
+    if ($unknownCategories.Count -gt 0) {
+        Stop-Release "Categories missing from README groups: $($unknownCategories -join ', ')."
+    }
+
+    $sections = foreach ($group in $Groups) {
+        if (-not $group.id -or -not $group.title -or @($group.categories).Count -eq 0) {
+            Stop-Release 'An ordered README group is missing id, title, or categories.'
+        }
+        $groupMappings = @($Mappings | Where-Object { $_.category -in $group.categories } | Sort-Object target)
+        if ($groupMappings.Count -eq 0) { continue }
+        $rows = foreach ($mapping in $groupMappings) {
+            "| [$($mapping.target)](skills/$($mapping.category)/$($mapping.target)/) | $($mapping.summary) | ``skills/$($mapping.category)/$($mapping.target)`` |"
+        }
+        "### $($group.title)`n`n| Skill | 说明 | 安装路径 |`n| --- | --- | --- |`n" + ($rows -join "`n")
+    }
+    $catalog = "<!-- skill-catalog:start -->`n`n" + ($sections -join "`n`n") + "`n`n<!-- skill-catalog:end -->"
+    $pattern = '(?s)<!-- skill-catalog:start -->.*?<!-- skill-catalog:end -->'
     if (-not [regex]::IsMatch($readme, $pattern)) {
-        Stop-Release 'README.md does not contain the expected Skills catalog section.'
+        Stop-Release 'README.md does not contain the required skill-catalog markers.'
     }
     $updated = [regex]::Replace($readme, $pattern, $catalog.TrimEnd())
     [System.IO.File]::WriteAllText($ReadmePath, $updated.TrimEnd() + "`n", [System.Text.UTF8Encoding]::new($false))
@@ -130,6 +147,7 @@ if (-not (Test-Path -LiteralPath $mapPath -PathType Leaf)) {
 
 $mapDocument = Get-Content -LiteralPath $mapPath -Raw | ConvertFrom-Json
 $mappings = @($mapDocument.skills)
+$groups = @($mapDocument.groups)
 if ($mappings.Count -eq 0) {
     Stop-Release 'The skill map is empty.'
 }
@@ -211,7 +229,7 @@ Get-ChildItem -LiteralPath $releaseSkillsRoot -Directory -Recurse | ForEach-Obje
     }
 }
 
-Update-ReadmeCatalog -ReadmePath (Join-Path $worktree 'README.md') -Mappings $mappings
+Update-ReadmeCatalog -ReadmePath (Join-Path $worktree 'README.md') -Mappings $mappings -Groups $groups
 
 Write-Host "`nRelease preview:"
 & git -C $worktree status --short

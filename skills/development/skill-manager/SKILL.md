@@ -21,10 +21,10 @@ Use this skill only when the user asks to organize, publish, synchronize, or rev
 
 1. Confirm the source directory, GitHub repository, and branch. Inspect the repository's existing layout before changing it.
 2. Inventory every direct child containing `SKILL.md`. Exclude metadata directories such as `__MACOSX`.
-3. Review `references/skill-map.json`. Add a category and concise public summary for every new skill. Do not guess a category if the skill's purpose is unclear.
+3. Review `references/skill-map.json`. Add a category and concise public summary for every new skill, and assign its category to an existing ordered display group. Do not guess a category if the skill's purpose is unclear.
 4. Keep user-specific replacement rules only in `.local-publishing-rules.json` beside this skill. This local-only file is deliberately excluded from releases. Start from the example in `references/local-publishing-rules.example.json`.
 5. Run `scripts/sync-skills.ps1` in `Preview` mode. Resolve every validation failure before requesting a publish run.
-6. Summarize added, updated, removed, and blocked files for the user. When they explicitly request publishing, rerun in `Publish` mode.
+6. Check the previewed README: every published skill must appear exactly once under the correct group, with a working repository-relative link and install path. Summarize added, updated, removed, and blocked files for the user. When they explicitly request publishing, rerun in `Publish` mode.
 7. Verify the pushed commit, repository status, README catalog, and that no sensitive-value scanner failures remain.
 
 ## Commands
@@ -53,10 +53,10 @@ To synchronize only a previously published skill, add `-SkillNames '<skill-name>
 
 Publish skills as `skills/<category>/<skill-name>/`. Each directory must contain `SKILL.md`; optional reusable support files belong in `agents/`, `references/`, `scripts/`, or `tests/`.
 
-The synchronization script rewrites the repository's `## Skills` catalog from the public summaries in `references/skill-map.json`. Keep summaries short, accurate, and free of private context.
+The synchronization script rewrites only the `<!-- skill-catalog:start -->` / `<!-- skill-catalog:end -->` block in the repository's `## Skills` section, using ordered, grouped tables from `references/skill-map.json`. Keep group titles and summaries short, accurate, and free of private context. When adding or reclassifying a skill, update the mapping and verify the resulting README in Preview mode within the same change.
 
 ## Failure handling
 
-- An unmapped skill, invalid frontmatter, unrecognized local path, email address, credential-like assignment, or local-only configuration in the release copy is a release blocker.
+- An unmapped skill, a category absent from the ordered README groups, invalid frontmatter, unrecognized local path, email address, credential-like assignment, or local-only configuration in the release copy is a release blocker.
 - Do not bypass a blocker by disabling its check. Add a safe local replacement rule or revise only the temporary release copy.
 - Authentication, non-fast-forward, and Git conflicts are external-state failures. Preserve the temporary worktree path printed by the script and report the exact next action; do not force-push.

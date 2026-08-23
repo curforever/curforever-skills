@@ -1,4 +1,11 @@
 {
+  "groups": [
+    {"id": "development", "title": "开发与工程", "categories": ["development"]},
+    {"id": "learning", "title": "学习与知识", "categories": ["learning"]},
+    {"id": "productivity", "title": "生产力", "categories": ["productivity"]},
+    {"id": "project-management", "title": "项目管理", "categories": ["project-management"]},
+    {"id": "communication-writing", "title": "沟通与写作", "categories": ["communication", "writing"]}
+  ],
   "skills": [
     {"source": "ask-coach", "category": "communication", "target": "ask-coach", "summary": "将职场沟通意图改写为可直接发送的版本", "initialPublish": false},
     {"source": "brainstorming", "category": "development", "target": "brainstorming", "summary": "在创作或实现前梳理需求与设计"},
