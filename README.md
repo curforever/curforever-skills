@@ -16,8 +16,10 @@
 | [code-planner](skills/development/code-planner/) | 生成范围清晰、可执行的编码任务提示 | `skills/development/code-planner` |
 | [code-reading-coach](skills/development/code-reading-coach/) | 以业务问题驱动的交互式源码学习 | `skills/development/code-reading-coach` |
 | [code-reviewer](skills/development/code-reviewer/) | 只读审查代码变更及其测试证据 | `skills/development/code-reviewer` |
+| [github-project-planner](skills/development/github-project-planner/) | 调研 GitHub 同类开源项目并制定可落地的开发方案 | `skills/development/github-project-planner` |
 | [prompt-architect](skills/development/prompt-architect/) | 按任务意图分析并改进提示词 | `skills/development/prompt-architect` |
 | [skill-manager](skills/development/skill-manager/) | 脱敏、规范化并发布本地技能集合 | `skills/development/skill-manager` |
+| [workflow-to-skill](skills/development/workflow-to-skill/) | 从会话与项目记录提炼重复工作流并整理为 skill | `skills/development/workflow-to-skill` |
 
 ### 学习与知识
 
@@ -30,6 +32,7 @@
 | Skill | 说明 | 安装路径 |
 | --- | --- | --- |
 | [daily-report](skills/productivity/daily-report/) | 规划、记录并汇总每日工作 | `skills/productivity/daily-report` |
+| [decision-challenger](skills/productivity/decision-challenger/) | 以反方、支持方和证据裁决审查重要决策 | `skills/productivity/decision-challenger` |
 | [knowledge-base](skills/productivity/knowledge-base/) | 查询、整理和复用本地工作知识 | `skills/productivity/knowledge-base` |
 
 ### 项目管理

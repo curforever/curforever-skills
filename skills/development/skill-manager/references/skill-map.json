@@ -12,7 +12,9 @@
     {"source": "code-planner", "category": "development", "target": "code-planner", "summary": "生成范围清晰、可执行的编码任务提示"},
     {"source": "code-reading-coach", "category": "development", "target": "code-reading-coach", "summary": "以业务问题驱动的交互式源码学习"},
     {"source": "code-reviewer", "category": "development", "target": "code-reviewer", "summary": "只读审查代码变更及其测试证据"},
+    {"source": "github-project-planner", "category": "development", "target": "github-project-planner", "summary": "调研 GitHub 同类开源项目并制定可落地的开发方案"},
     {"source": "daily-report", "category": "productivity", "target": "daily-report", "summary": "规划、记录并汇总每日工作", "initialPublish": false},
+    {"source": "decision-challenger", "category": "productivity", "target": "decision-challenger", "summary": "以反方、支持方和证据裁决审查重要决策"},
     {"source": "humanizer", "category": "writing", "target": "humanizer", "summary": "减少 AI 写作惯性并保留自然表达"},
     {"source": "knowledge-base", "category": "productivity", "target": "knowledge-base", "summary": "查询、整理和复用本地工作知识"},
     {"source": "project-close", "category": "project-management", "target": "project-close", "summary": "创建项目交接或轻量检查点"},
@@ -21,6 +23,7 @@
     {"source": "project-resume", "category": "project-management", "target": "project-resume", "summary": "为接手项目生成只读上下文简报"},
     {"source": "prompt-architect", "category": "development", "target": "prompt-architect", "summary": "按任务意图分析并改进提示词"},
     {"source": "read-coach", "category": "learning", "target": "read-coach", "summary": "评估学习材料并通过问答帮助掌握内容", "initialPublish": false},
-    {"source": "skill-manager", "category": "development", "target": "skill-manager", "summary": "脱敏、规范化并发布本地技能集合"}
+    {"source": "skill-manager", "category": "development", "target": "skill-manager", "summary": "脱敏、规范化并发布本地技能集合"},
+    {"source": "workflow-to-skill", "category": "development", "target": "workflow-to-skill", "summary": "从会话与项目记录提炼重复工作流并整理为 skill"}
   ]
 }

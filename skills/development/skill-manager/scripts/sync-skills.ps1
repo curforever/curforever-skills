@@ -102,6 +102,13 @@ function Test-ReleaseText([string]$Text, [string]$RelativePath, $Rules) {
 
 function Update-ReadmeCatalog([string]$ReadmePath, $Mappings, $Groups) {
     $readme = Get-Content -LiteralPath $ReadmePath -Raw
+    $repositoryRoot = Split-Path -Parent $ReadmePath
+    # A selective release may leave mapped local skills unpublished. The public
+    # catalog must describe only skill directories that actually exist in Git.
+    $Mappings = @($Mappings | Where-Object {
+        $entrypoint = Join-Path $repositoryRoot "skills/$($_.category)/$($_.target)/SKILL.md"
+        Test-Path -LiteralPath $entrypoint -PathType Leaf
+    })
     if (@($Groups).Count -eq 0) {
         Stop-Release 'The skill map does not define ordered README groups.'
     }

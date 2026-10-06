@@ -53,7 +53,7 @@ To synchronize only a previously published skill, add `-SkillNames '<skill-name>
 
 Publish skills as `skills/<category>/<skill-name>/`. Each directory must contain `SKILL.md`; optional reusable support files belong in `agents/`, `references/`, `scripts/`, or `tests/`.
 
-The synchronization script rewrites only the `<!-- skill-catalog:start -->` / `<!-- skill-catalog:end -->` block in the repository's `## Skills` section, using ordered, grouped tables from `references/skill-map.json`. Keep group titles and summaries short, accurate, and free of private context. When adding or reclassifying a skill, update the mapping and verify the resulting README in Preview mode within the same change.
+The synchronization script rewrites only the `<!-- skill-catalog:start -->` / `<!-- skill-catalog:end -->` block in the repository's `## Skills` section, using ordered, grouped tables from `references/skill-map.json`. Include only mappings whose release directory actually contains `SKILL.md`; a selective release must not advertise unpublished local skills. Keep group titles and summaries short, accurate, and free of private context. When adding or reclassifying a skill, update the mapping and verify the resulting README in Preview mode within the same change.
 
 ## Failure handling
 

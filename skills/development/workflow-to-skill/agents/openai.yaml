@@ -1,0 +1,4 @@
+interface:
+  display_name: "工作流提炼"
+  short_description: "从可访问的会话与项目记录中识别重复流程，并整理为可复用技能"
+  default_prompt: "用 $workflow-to-skill 回顾指定范围内可读取的会话与项目记录，找出重复工作流，检查已有技能，并把证据充分的候选整理成 skill。"

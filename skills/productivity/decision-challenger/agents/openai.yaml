@@ -1,0 +1,4 @@
+interface:
+  display_name: "决策反方审查"
+  short_description: "先挑战重要决定，再检验支持证据，给出判断与结论反转条件"
+  default_prompt: "用 $decision-challenger 审查我准备做的重要决定：先提出最有力的反对意见，再检验支持理由，最后给出证据判断、最大未知和反转条件。"
