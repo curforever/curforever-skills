@@ -218,6 +218,7 @@ foreach ($mapping in $releaseMappings) {
 foreach ($file in Get-TextFiles $releaseSkillsRoot) {
     $text = [System.IO.File]::ReadAllText($file.FullName)
     $text = Convert-ToReleaseText -Text $text -Rules $rules
+    $text = $text.Replace("`r`n", "`n")
     $relative = $file.FullName.Substring($worktree.Length + 1).Replace('\', '/')
     Test-ReleaseText -Text $text -RelativePath $relative -Rules $rules
     [System.IO.File]::WriteAllText($file.FullName, $text, [System.Text.UTF8Encoding]::new($false))
