@@ -1,6 +1,7 @@
 ---
 name: code-reviewer
 description: 只读扫描并验证代码仓库、Git diff 和测试证据，识别本次变更引入的高置信问题。用于独立代码审查、变更验证和交付前核验；不修改代码仓库，也不运行构建或测试。
+license: MIT
 ---
 
 # 代码审查

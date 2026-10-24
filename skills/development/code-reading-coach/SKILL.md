@@ -1,6 +1,7 @@
 ---
 name: code-reading-coach
 description: "Guide a learner through source code one business question at a time with plain-language business flows, IntelliJ IDEA follow-along steps, source evidence, and adaptive self-checks. Use only when the user explicitly invokes $code-reading-coach or /code-reading-coach to study a codebase, follow an HTML learning handbook, connect business behavior to source files, or maintain a code-learning knowledge document."
+license: MIT
 ---
 
 # Code Reading Coach
@@ -15,15 +16,13 @@ Do not behave like a code summarizer. Teach from shallow to deep: business purpo
 
 Invoke only after the user explicitly writes `$code-reading-coach`, `/code-reading-coach`, or clearly says to use this Skill. Do not apply the workflow to ordinary code questions without explicit invocation.
 
-Use these defaults when the user does not provide replacements:
+Determine inputs from the user's request or the current project's explicit configuration:
 
-- Handbook: `./首页服务端学习手册.html`
-- `whomesoa`: `./repositories/whomesoa`
-- `channelsoa`: `./repositories/channelsoa`
-- `channelcms`: `./repositories/channelcms`
-- Reference material: `./references/参考资料` and `./references/首页性能优化`
+- An existing HTML or Markdown learning handbook and its Todo list.
+- The source repository or repositories relevant to the business question.
+- Optional user-authorized reference material.
 
-Treat the handbook and repository paths as user-configurable. If the user provides another HTML, repository, or reference path, use the new path for that run and do not silently mix projects.
+Resolve relative paths against the confirmed project root, not the skill installation directory. If an essential input is missing, ask for that input; do not invent a repository, handbook or private default. Adapt IDE shortcuts to the user's operating system and keymap.
 
 Repositories and reference material are read-only. The only normal write target in the default project is the handbook. Do not modify, format, commit, or reset a source repository.
 

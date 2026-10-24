@@ -1,0 +1,4 @@
+interface:
+  display_name: "本地 AI 资讯日报"
+  short_description: "核实行业与实践资讯，保存本地日报并保留延伸问答"
+  default_prompt: "使用 $ai-news-local 生成今天的 AI资讯日报，核实一手来源，完整展示正文并保存本地 Markdown，不上传外部平台。"

@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/Leonxlnx/taste-skill",
+  "reference_commit": "1fa4238870dc6862752458e9104f1be5b392b072",
+  "upstream_path": "redesign-skill",
+  "license": "MIT",
+  "reviewed_on": "2026-10-24",
+  "notes": "Adapted local copy; reference commit identifies the inspected upstream and license, not a claim of byte-for-byte equivalence. Local behavior and portability changes may differ."
+}

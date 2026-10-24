@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Writer"
+  short_description: "Turn rough requirements into precise AI prompts"
+  default_prompt: "Use $prompt-writer to turn these rough requirements into a clear, detailed prompt."

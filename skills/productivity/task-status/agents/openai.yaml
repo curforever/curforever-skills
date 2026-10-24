@@ -1,0 +1,6 @@
+interface:
+  display_name: "task-status"
+  short_description: "汇总当前项目进度和卡点，并同步记录到今日日报 log"
+  default_prompt: "使用 $task-status 总结当前项目会话的进度和卡点，并记录到今天的日报 log。"
+policy:
+  allow_implicit_invocation: false

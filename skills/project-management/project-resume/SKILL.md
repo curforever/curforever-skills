@@ -1,6 +1,7 @@
 ---
 name: project-resume
 description: Read and brief the continuity state of the current local project without modifying it. Use when a new agent or model takes over, a new conversation resumes a project, or the user asks for a project handoff, resume, or onboarding briefing.
+license: MIT
 ---
 
 # Project Resume

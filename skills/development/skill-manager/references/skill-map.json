@@ -1,29 +1,286 @@
 {
   "groups": [
-    {"id": "development", "title": "开发与工程", "categories": ["development"]},
-    {"id": "learning", "title": "学习与知识", "categories": ["learning"]},
-    {"id": "productivity", "title": "生产力", "categories": ["productivity"]},
-    {"id": "project-management", "title": "项目管理", "categories": ["project-management"]},
-    {"id": "communication-writing", "title": "沟通与写作", "categories": ["communication", "writing"]}
+    {
+      "id": "development",
+      "title": "开发与工程",
+      "categories": [
+        "development"
+      ]
+    },
+    {
+      "id": "design",
+      "title": "界面设计",
+      "categories": [
+        "design"
+      ]
+    },
+    {
+      "id": "learning",
+      "title": "学习与知识",
+      "categories": [
+        "learning"
+      ]
+    },
+    {
+      "id": "productivity",
+      "title": "生产力",
+      "categories": [
+        "productivity"
+      ]
+    },
+    {
+      "id": "project-management",
+      "title": "项目管理",
+      "categories": [
+        "project-management"
+      ]
+    },
+    {
+      "id": "communication-writing",
+      "title": "沟通与写作",
+      "categories": [
+        "communication",
+        "writing"
+      ]
+    }
   ],
   "skills": [
-    {"source": "ask-coach", "category": "communication", "target": "ask-coach", "summary": "将职场沟通意图改写为可直接发送的版本", "initialPublish": false},
-    {"source": "brainstorming", "category": "development", "target": "brainstorming", "summary": "在创作或实现前梳理需求与设计"},
-    {"source": "code-planner", "category": "development", "target": "code-planner", "summary": "生成范围清晰、可执行的编码任务提示"},
-    {"source": "code-reading-coach", "category": "development", "target": "code-reading-coach", "summary": "以业务问题驱动的交互式源码学习"},
-    {"source": "code-reviewer", "category": "development", "target": "code-reviewer", "summary": "只读审查代码变更及其测试证据"},
-    {"source": "github-project-planner", "category": "development", "target": "github-project-planner", "summary": "调研 GitHub 同类开源项目并制定可落地的开发方案"},
-    {"source": "daily-report", "category": "productivity", "target": "daily-report", "summary": "规划、记录并汇总每日工作", "initialPublish": false},
-    {"source": "decision-challenger", "category": "productivity", "target": "decision-challenger", "summary": "以反方、支持方和证据裁决审查重要决策"},
-    {"source": "humanizer", "category": "writing", "target": "humanizer", "summary": "减少 AI 写作惯性并保留自然表达"},
-    {"source": "knowledge-base", "category": "productivity", "target": "knowledge-base", "summary": "查询、整理和复用本地工作知识"},
-    {"source": "project-close", "category": "project-management", "target": "project-close", "summary": "创建项目交接或轻量检查点"},
-    {"source": "project-init", "category": "project-management", "target": "project-init", "summary": "初始化或同步项目连续性文档"},
-    {"source": "project-refactor", "category": "project-management", "target": "project-refactor", "summary": "结构调整后同步项目文档引用"},
-    {"source": "project-resume", "category": "project-management", "target": "project-resume", "summary": "为接手项目生成只读上下文简报"},
-    {"source": "prompt-architect", "category": "development", "target": "prompt-architect", "summary": "按任务意图分析并改进提示词"},
-    {"source": "read-coach", "category": "learning", "target": "read-coach", "summary": "评估学习材料并通过问答帮助掌握内容", "initialPublish": false},
-    {"source": "skill-manager", "category": "development", "target": "skill-manager", "summary": "脱敏、规范化并发布本地技能集合"},
-    {"source": "workflow-to-skill", "category": "development", "target": "workflow-to-skill", "summary": "从会话与项目记录提炼重复工作流并整理为 skill"}
+    {
+      "source": "ask-coach",
+      "category": "communication",
+      "target": "ask-coach",
+      "summary": "将职场沟通意图改写为可直接发送的版本",
+      "initialPublish": false
+    },
+    {
+      "source": "brainstorming",
+      "category": "development",
+      "target": "brainstorming",
+      "summary": "在创作或实现前梳理需求与设计"
+    },
+    {
+      "source": "code-planner",
+      "category": "development",
+      "target": "code-planner",
+      "summary": "生成范围清晰、可执行的编码任务提示"
+    },
+    {
+      "source": "code-reading-coach",
+      "category": "development",
+      "target": "code-reading-coach",
+      "summary": "以业务问题驱动的交互式源码学习"
+    },
+    {
+      "source": "code-reviewer",
+      "category": "development",
+      "target": "code-reviewer",
+      "summary": "只读审查代码变更及其测试证据"
+    },
+    {
+      "source": "github-project-planner",
+      "category": "development",
+      "target": "github-project-planner",
+      "summary": "调研 GitHub 同类开源项目并制定可落地的开发方案"
+    },
+    {
+      "source": "daily-report",
+      "category": "productivity",
+      "target": "daily-report",
+      "summary": "规划、记录并汇总每日工作",
+      "initialPublish": false
+    },
+    {
+      "source": "decision-challenger",
+      "category": "productivity",
+      "target": "decision-challenger",
+      "summary": "以反方、支持方和证据裁决审查重要决策"
+    },
+    {
+      "source": "humanizer",
+      "category": "writing",
+      "target": "humanizer",
+      "summary": "减少 AI 写作惯性并保留自然表达"
+    },
+    {
+      "source": "knowledge-base",
+      "category": "productivity",
+      "target": "knowledge-base",
+      "summary": "查询、整理和复用本地工作知识"
+    },
+    {
+      "source": "project-close",
+      "category": "project-management",
+      "target": "project-close",
+      "summary": "创建项目交接或轻量检查点"
+    },
+    {
+      "source": "project-init",
+      "category": "project-management",
+      "target": "project-init",
+      "summary": "初始化或同步项目连续性文档"
+    },
+    {
+      "source": "project-refactor",
+      "category": "project-management",
+      "target": "project-refactor",
+      "summary": "结构调整后同步项目文档引用"
+    },
+    {
+      "source": "project-resume",
+      "category": "project-management",
+      "target": "project-resume",
+      "summary": "为接手项目生成只读上下文简报"
+    },
+    {
+      "source": "prompt-architect",
+      "category": "development",
+      "target": "prompt-architect",
+      "summary": "按任务意图分析并改进提示词"
+    },
+    {
+      "source": "read-coach",
+      "category": "learning",
+      "target": "read-coach",
+      "summary": "评估学习材料并通过问答帮助掌握内容",
+      "initialPublish": false
+    },
+    {
+      "source": "skill-manager",
+      "category": "development",
+      "target": "skill-manager",
+      "summary": "脱敏、规范化并发布本地技能集合"
+    },
+    {
+      "source": "workflow-to-skill",
+      "category": "development",
+      "target": "workflow-to-skill",
+      "summary": "从会话与项目记录提炼重复工作流并整理为 skill"
+    },
+    {
+      "source": "domain-modeling",
+      "category": "development",
+      "target": "domain-modeling",
+      "summary": "澄清领域术语并维护术语表与架构决策"
+    },
+    {
+      "source": "find-skills",
+      "category": "development",
+      "target": "find-skills",
+      "summary": "查找并评估适合当前任务的公开技能"
+    },
+    {
+      "source": "frontend-design",
+      "category": "design",
+      "target": "frontend-design",
+      "summary": "为新界面选择有辨识度的视觉方向"
+    },
+    {
+      "source": "grill-me",
+      "category": "development",
+      "target": "grill-me",
+      "summary": "通过逐轮追问检验方案与设计"
+    },
+    {
+      "source": "grill-with-docs",
+      "category": "development",
+      "target": "grill-with-docs",
+      "summary": "检验方案并沉淀领域术语与决策"
+    },
+    {
+      "source": "grilling",
+      "category": "development",
+      "target": "grilling",
+      "summary": "梳理方案的决策依赖并追问关键选择"
+    },
+    {
+      "source": "handoff",
+      "category": "project-management",
+      "target": "handoff",
+      "summary": "生成可供下一会话接手的精简交接文档"
+    },
+    {
+      "source": "impeccable",
+      "category": "design",
+      "target": "impeccable",
+      "summary": "设计、审查和改进界面体验"
+    },
+    {
+      "source": "markitdown-docs",
+      "category": "productivity",
+      "target": "markitdown-docs",
+      "summary": "将常见文档转换为便于检索的 Markdown"
+    },
+    {
+      "source": "redesign-existing-projects",
+      "category": "design",
+      "target": "redesign-existing-projects",
+      "summary": "审查并改进已有网站或应用的视觉设计"
+    },
+    {
+      "source": "design-taste-frontend",
+      "category": "design",
+      "target": "design-taste-frontend",
+      "summary": "设计有明确视觉方向的落地页与作品集"
+    },
+    {
+      "source": "prompt-writer",
+      "category": "development",
+      "target": "prompt-writer",
+      "summary": "为其他 AI 编写明确、可执行的提示词"
+    },
+    {
+      "source": "writing-plans",
+      "category": "development",
+      "target": "writing-plans",
+      "summary": "将已确认需求拆为有验收依据的实施计划"
+    },
+    {
+      "source": "project-lessons",
+      "category": "project-management",
+      "target": "project-lessons",
+      "summary": "记录真实错误与修复证据，按需复用经验"
+    },
+    {
+      "source": "multi-agent-cowork",
+      "category": "project-management",
+      "target": "multi-agent-cowork",
+      "summary": "通过本地任务记录协调跨 Agent 接力"
+    },
+    {
+      "source": "training-apply",
+      "category": "learning",
+      "target": "training-apply",
+      "summary": "从已授权学习资料中提取方法并应用到实际问题"
+    },
+    {
+      "source": "ai-news-local",
+      "category": "learning",
+      "target": "ai-news-local",
+      "summary": "核实 AI 资讯并生成本地日报，保留延伸问答"
+    },
+    {
+      "source": "ai-news-qa",
+      "category": "learning",
+      "target": "ai-news-qa",
+      "summary": "按主题整理指定日期日报的本地延伸问答"
+    },
+    {
+      "source": "task-status",
+      "category": "productivity",
+      "target": "task-status",
+      "summary": "概括当前任务状态并记录当天进度"
+    },
+    {
+      "source": "project-knowledge",
+      "category": "project-management",
+      "target": "project-knowledge",
+      "summary": "检索、沉淀并修订当前项目的可复用知识"
+    },
+    {
+      "source": "premise-checker",
+      "category": "productivity",
+      "target": "premise-checker",
+      "summary": "核对关键前提、事实依据与遗漏变量，修正后继续任务"
+    }
   ]
 }

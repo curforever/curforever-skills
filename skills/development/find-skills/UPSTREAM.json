@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/vercel-labs/skills",
+  "reference_commit": "a80e4c9d12d607631249d4d7d059f835d4b2f13a",
+  "upstream_path": "skills/find-skills",
+  "license": "MIT",
+  "reviewed_on": "2026-10-24",
+  "notes": "Adapted local copy; reference commit identifies the inspected upstream and license, not a claim of byte-for-byte equivalence. Local behavior and portability changes may differ."
+}

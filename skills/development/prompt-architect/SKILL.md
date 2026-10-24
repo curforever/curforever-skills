@@ -1,6 +1,7 @@
 ---
 name: "prompt-architect"
 description: "Analyzes and improves prompts using 31 frameworks across 7 intent categories. Use when a user wants to improve, rewrite, structure, or engineer a prompt — including requests like \"help me write a better prompt\", \"improve this prompt\", \"what framework should I use\", \"make this prompt more effective\", or any prompt engineering task."
+license: MIT
 ---
 
 # Prompt Architect

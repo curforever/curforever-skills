@@ -3,3 +3,15 @@ __pycache__/
 .pytest_cache/
 .read-coach-tmp/
 *.read-coach.md
+
+# Local publishing inputs and generated artifacts
+.local-*
+**/.local-*
+.env
+.env.*
+__MACOSX/
+.DS_Store
+._*
+refs/
+.verify-*/
+*.read-coach.md

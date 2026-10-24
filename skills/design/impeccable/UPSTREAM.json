@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/pbakaus/impeccable",
+  "reference_commit": "936867543ac2576920d663cc9803597f6044f3ac",
+  "upstream_path": "",
+  "license": "Apache-2.0",
+  "reviewed_on": "2026-10-24",
+  "notes": "Adapted local copy; reference commit identifies the inspected upstream and license, not a claim of byte-for-byte equivalence. Local behavior and portability changes may differ.",
+  "local_changes": [
+    "Use the installed skill root for the Windows launcher.",
+    "Normalize JSON string escapes in packed font geometry; decoded data is unchanged."
+  ]
+}

@@ -1,6 +1,7 @@
 ---
 name: "daily-report"
 description: "日报助手。帮助制定当日计划、记录过程进度并生成可确认后写入的日报。适用于用户想管理每日工作记录、整理进展、卡点和次日计划时。支持 /daily-report plan、log、final 三种模式。"
+license: MIT
 ---
 
 # 日报助手

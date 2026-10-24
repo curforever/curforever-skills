@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/Songgyubin/prompt-writer-skill",
+  "commit": "cd7e7ec8b1cde1956e86e6547adbbeafca306b66",
+  "package_version": "0.1.4",
+  "upstream_skill_path": "skills/prompt-writer",
+  "license": "Apache-2.0",
+  "verified_on": "2026-10-22",
+  "upstream_files_sha256": {
+    "SKILL.md": "bd62f5c5a1422d2f9a1f438478b5508deee97cf07d1ff94b0d034b61c98d2ae9",
+    "references/ai-notes-patterns.md": "135a29a2702c5d3855395a5ad7136ce36b48300b76ace2457a80f9633d1ddc24",
+    "references/official-prompting-playbook.md": "230ff71d4001cc0da9ee5183aebebcbb7d8dc4520123be219edf7eff6d36b9f7",
+    "agents/openai.yaml": "d174b48013a313e3c060de541f37e879322ce74199f1203e2d70374c35c33cfe"
+  },
+  "skill_content_modified": false,
+  "packaging_additions": [
+    "LICENSE",
+    "UPSTREAM.json"
+  ]
+}

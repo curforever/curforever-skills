@@ -1,6 +1,7 @@
 ---
 name: project-close
 description: Save a complete project handoff or a lightweight automatic checkpoint in the current local project. Use when the user asks to close, hand off, save progress, switch agent/model/platform, or when an imminent context or session transition risks losing work.
+license: MIT
 ---
 
 # Project Close

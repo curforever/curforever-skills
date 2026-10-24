@@ -1,6 +1,7 @@
 ---
 name: skill-manager
 description: "Safely publish and maintain a local collection of Agent Skills in a GitHub repository. Use when the user asks to inventory skills, normalize their repository layout, remove local or personal data from the publish copy, preview changes, or explicitly push a reviewed update."
+license: MIT
 ---
 
 # Skill Manager

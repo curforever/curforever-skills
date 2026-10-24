@@ -1,6 +1,7 @@
 ---
 name: project-refactor
 description: Synchronize continuity documents after the user has renamed, moved, merged, or reorganized files and directories in the current local project. Use when the user reports a structural change and asks to update project documentation or references.
+license: MIT
 ---
 
 # Project Refactor

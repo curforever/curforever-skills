@@ -25,9 +25,9 @@ function Stop-Release([string]$Message) {
 }
 
 function Get-TextFiles([string]$Root) {
-    $extensions = @('.md', '.json', '.yaml', '.yml', '.py', '.ps1', '.js', '.ts', '.sh', '.txt')
+    $extensions = @('.md', '.json', '.yaml', '.yml', '.py', '.ps1', '.js', '.mjs', '.cjs', '.ts', '.sh', '.txt', '.toml', '.html', '.css', '.cmd')
     Get-ChildItem -LiteralPath $Root -Recurse -File -Force |
-        Where-Object { $extensions -contains $_.Extension.ToLowerInvariant() }
+        Where-Object { $extensions -contains $_.Extension.ToLowerInvariant() -or $_.Name -match '^(LICENSE|NOTICE)' }
 }
 
 function Test-Within([string]$Candidate, [string]$Parent) {
@@ -43,15 +43,15 @@ function Copy-SkillFiles([string]$Source, [string]$Destination) {
     }
 
     Copy-Item -LiteralPath $skillFile -Destination (Join-Path $Destination 'SKILL.md') -Force
-    foreach ($directory in @('agents', 'references', 'scripts', 'tests')) {
-        $from = Join-Path $Source $directory
-        if (Test-Path -LiteralPath $from -PathType Container) {
-            $to = Join-Path $Destination $directory
-            New-Item -ItemType Directory -Path $to -Force | Out-Null
-            Get-ChildItem -LiteralPath $from -Force | ForEach-Object {
-                Copy-Item -LiteralPath $_.FullName -Destination $to -Recurse -Force
-            }
-        }
+    # Keep templates, assets, singular reference/ folders, and license/provenance files.
+    Get-ChildItem -LiteralPath $Source -Recurse -File -Force | ForEach-Object {
+        $relative = [System.IO.Path]::GetRelativePath($Source, $_.FullName)
+        $parts = $relative -split '[\\/]'
+        if (@($parts | Where-Object { $_ -in @('.git', '__MACOSX', '__pycache__', '.pytest_cache', 'node_modules') }).Count -gt 0) { return }
+        if ($_.Name -match '^(\.env($|\.)|\.local-|\._)' -or $_.Name -eq '.DS_Store' -or $_.Extension -in @('.pyc', '.pyo')) { return }
+        $target = Join-Path $Destination $relative
+        New-Item -ItemType Directory -Path (Split-Path -Parent $target) -Force | Out-Null
+        Copy-Item -LiteralPath $_.FullName -Destination $target -Force
     }
 }
 
@@ -59,11 +59,10 @@ function Convert-ToReleaseText([string]$Text, $Rules) {
     # These generic replacements yield paths relative to a user's own working directory.
     $Text = [regex]::Replace($Text, '(?i)/Users/[^/\s]+/Desktop/日报周报', './日报周报')
     $Text = [regex]::Replace($Text, '(?i)/Users/[^/\s]+/workspace/([^/\s`"'']+)', './repositories/$1')
-    $Text = [regex]::Replace($Text, '(?i)/Users/[^/\s]+/Desktop/服务端/个人沉淀/首页服务端学习手册\.html', './首页服务端学习手册.html')
+    $Text = [regex]::Replace($Text, '(?i)/Users/[^/\s]+/Desktop/服务端/个人沉淀/源码学习手册\.html', './源码学习手册.html')
     $Text = [regex]::Replace($Text, '(?i)/Users/[^/\s]+/Desktop/服务端/参考资料', './references/参考资料')
-    $Text = [regex]::Replace($Text, '(?i)/Users/[^/\s]+/Desktop/首页性能优化', './references/首页性能优化')
+    $Text = [regex]::Replace($Text, '(?i)/Users/[^/\s]+/Desktop/性能分析', './references/性能分析')
     $Text = [regex]::Replace($Text, '(?i)[A-Z]:\\Users\\[^\\\s]+\\\.codex\\skills', 'skills')
-    $Text = [regex]::Replace($Text, '(?i)E:\\# JingDong\\2_个人成长\\2_技术\\4_Skills\\skills', 'skills')
 
     foreach ($replacement in @($Rules.replacements)) {
         if ($null -ne $replacement -and $replacement.pattern) {
@@ -74,17 +73,10 @@ function Convert-ToReleaseText([string]$Text, $Rules) {
 }
 
 function Test-ReleaseText([string]$Text, [string]$RelativePath, $Rules) {
-    # This scanner intentionally contains examples of the patterns it detects. Its
-    # implementation is reviewed with this skill, so scanning its own regex source
-    # would be a false positive rather than evidence of a local value.
-    if ($RelativePath -eq 'skills/development/skill-manager/scripts/sync-skills.ps1') {
-        return
-    }
     $checks = @(
-        @{ Pattern = '(?i)/Users/[^/\s]+'; Reason = 'a macOS user-home path' },
-        @{ Pattern = '(?i)/home/[^/\s]+'; Reason = 'a Unix user-home path' },
+        @{ Pattern = '(?i)/Users/[a-z0-9_.-]+(?=/|$)'; Reason = 'a macOS user-home path' },
+        @{ Pattern = '(?i)/home/[a-z0-9_.-]+(?=/|$)'; Reason = 'a Unix user-home path' },
         @{ Pattern = '(?i)[A-Z]:\\Users\\[^\\\s]+'; Reason = 'a Windows user-home path' },
-        @{ Pattern = '(?i)E:\\# JingDong'; Reason = 'the local project root' },
         @{ Pattern = '(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b'; Reason = 'an email address' },
         @{ Pattern = '(?i)\b(api[_ -]?key|secret|token|password)\s*[:=]\s*["''][^"'']{8,}["'']'; Reason = 'a credential-like assignment' }
     )

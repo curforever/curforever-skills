@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/mattpocock/skills",
+  "reference_commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+  "upstream_path": "skills/productivity/handoff",
+  "license": "MIT",
+  "reviewed_on": "2026-10-24",
+  "notes": "Adapted local copy; reference commit identifies the inspected upstream and license, not a claim of byte-for-byte equivalence. Local behavior and portability changes may differ."
+}

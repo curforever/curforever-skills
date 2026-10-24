@@ -1,0 +1,6 @@
+interface:
+  display_name: "项目经验沉淀与复用"
+  short_description: "整理项目真实错误，分层积累预防经验与经过验证的修复方案"
+  default_prompt: "使用 $project-lessons 整理当前项目已发生的错误，去重更新经验并保留修复证据。"
+policy:
+  allow_implicit_invocation: true

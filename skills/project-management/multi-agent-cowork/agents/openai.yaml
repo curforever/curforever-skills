@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi Agent Cowork"
+  short_description: "跨 AI 规划、执行、修复接管与审查，保存任务证据并生成完整交接提示词"
+  default_prompt: "使用 $multi-agent-cowork 恢复当前项目任务，结合我的请求选择下一步；需要交接时生成完整提示词。"

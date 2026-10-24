@@ -1,0 +1,4 @@
+interface:
+  display_name: "本地 AI 资讯问答整理"
+  short_description: "按主题整理日报追问，原位更新本地对应日期问答"
+  default_prompt: "使用 $ai-news-qa 整理本会话的 AI资讯延伸问答，仅更新对应日期的本地日报，不上传外部平台。"

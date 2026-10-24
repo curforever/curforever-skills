@@ -1,0 +1,4 @@
+interface:
+  display_name: "前提与事实核查"
+  short_description: "检查错误前提、逻辑跳跃和事实来源，修正后继续完成原任务"
+  default_prompt: "用 $premise-checker 检查这个问题的前提和证据，直接指出有依据的错误与遗漏变量，修正后继续回答。"

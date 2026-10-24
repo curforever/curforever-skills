@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/ckelsoe/prompt-architect",
+  "reference_commit": "6c7a2c7b5a15cbb918828c7878c226a592985702",
+  "upstream_path": "skills/prompt-architect",
+  "license": "MIT",
+  "reviewed_on": "2026-10-24",
+  "notes": "Adapted local copy; reference commit identifies the inspected upstream and license, not a claim of byte-for-byte equivalence. Local behavior and portability changes may differ."
+}

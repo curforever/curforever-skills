@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/obra/superpowers",
+  "reference_commit": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+  "upstream_path": "skills/writing-plans",
+  "license": "MIT",
+  "reviewed_on": "2026-10-24",
+  "notes": "Adapted local copy; reference commit identifies the inspected upstream and license, not a claim of byte-for-byte equivalence. Local behavior and portability changes may differ."
+}

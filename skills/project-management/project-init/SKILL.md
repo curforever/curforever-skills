@@ -1,6 +1,7 @@
 ---
 name: project-init
 description: Initialize, migrate, or reconcile continuity documents for the current local project. Use when starting a project, standardizing an existing project, or when the user asks to initialize, migrate, reconcile, sync, or audit project documents.
+license: MIT
 ---
 
 # Project Init

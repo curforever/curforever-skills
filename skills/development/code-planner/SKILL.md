@@ -1,6 +1,7 @@
 ---
 name: code-planner
 description: 为 JoyCode 等编码 Agent 生成具体、可执行且受严格范围约束的编码提示词。用于用户要求编写编码提示词、拆解实现任务、降低编码 Agent 漏检风险时。此技能不修改代码仓库，也不执行仓库命令。
+license: MIT
 ---
 
 # 编码规划
