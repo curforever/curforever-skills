@@ -4,13 +4,14 @@
 
 > Practical Agent Skills for learning, development, design, and project continuity.
 
-39 个可单独安装的技能，按六个主题分组。现有安装路径保持稳定；每个技能只携带可复用的说明、脚本和参考资料。
+40 个可单独安装的技能，按六个主题分组。现有安装路径保持稳定；每个技能只携带可复用的说明、脚本和参考资料。
 
 ## 从任务选择技能
 
 | 你想完成的事 | 建议入口 |
 | --- | --- |
 | 判断材料是否值得读，并通过问答掌握 | `read-coach` |
+| 从日常疑问写短故事，理解机制与不同人的代价 | `everyday-mechanisms` |
 | 读懂真实代码的业务流程 | `code-reading-coach` |
 | 从笔记、课程或培训中找到可用方法 | `training-apply` |
 | 查看 AI 资讯、整理后续追问 | `ai-news-local`、`ai-news-qa` |
@@ -94,6 +95,7 @@
 | Skill | 说明 | 安装路径 |
 | --- | --- | --- |
 | [ask-coach](skills/communication/ask-coach/) | 将职场沟通意图改写为可直接发送的版本 | `skills/communication/ask-coach` |
+| [everyday-mechanisms](skills/writing/everyday-mechanisms/) | 从日常疑问写短故事，解释机制、处境差异与隐性代价 | `skills/writing/everyday-mechanisms` |
 | [humanizer](skills/writing/humanizer/) | 减少 AI 写作惯性并保留自然表达 | `skills/writing/humanizer` |
 
 <!-- skill-catalog:end -->

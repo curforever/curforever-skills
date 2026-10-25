@@ -281,6 +281,12 @@
       "category": "productivity",
       "target": "premise-checker",
       "summary": "核对关键前提、事实依据与遗漏变量，修正后继续任务"
+    },
+    {
+      "source": "everyday-mechanisms",
+      "category": "writing",
+      "target": "everyday-mechanisms",
+      "summary": "从日常疑问写短故事，解释机制、处境差异与隐性代价"
     }
   ]
 }

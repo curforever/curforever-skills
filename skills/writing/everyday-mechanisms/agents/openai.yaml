@@ -1,0 +1,4 @@
+interface:
+  display_name: "原来如此 · 日常机制故事"
+  short_description: "从日常疑问写短故事，讲清背后机制、不同人的处境与隐性代价"
+  default_prompt: "用 $everyday-mechanisms 把这个日常疑问写成简短故事，解释背后机制与不同人的代价：为什么大家都这样做？"
